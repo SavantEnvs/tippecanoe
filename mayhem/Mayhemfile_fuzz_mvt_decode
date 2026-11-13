@@ -1,0 +1,9 @@
+project: savantenvs/tippecanoe
+target: fuzz_mvt_decode
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_mvt_decode/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_mvt_decode
+    libfuzzer: true
+    timeout: 10

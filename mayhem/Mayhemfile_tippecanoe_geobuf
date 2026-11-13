@@ -1,0 +1,11 @@
+project: savantenvs/tippecanoe
+target: tippecanoe_geobuf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tippecanoe_geobuf/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-tippecanoe -q -f -z4 -o /tmp/tippecanoe_geobuf.mbtiles @@
+    filepath: input.geobuf
+    timeout: 30
+    env:
+      MFUZZ_COMPAT_LEVEL: '2'

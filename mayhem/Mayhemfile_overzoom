@@ -1,0 +1,11 @@
+project: savantenvs/tippecanoe
+target: overzoom
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/overzoom/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-tippecanoe-overzoom -o /tmp/overzoom.pbf @@ 11/327/791 12/654/1582
+    filepath: input.pbf
+    timeout: 30
+    env:
+      MFUZZ_COMPAT_LEVEL: '2'

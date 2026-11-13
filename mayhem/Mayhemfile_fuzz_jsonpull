@@ -1,0 +1,9 @@
+project: savantenvs/tippecanoe
+target: fuzz_jsonpull
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_jsonpull/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_jsonpull
+    libfuzzer: true
+    timeout: 10

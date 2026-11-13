@@ -1,0 +1,11 @@
+project: savantenvs/tippecanoe
+target: decode_pmtiles
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/decode_pmtiles/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-tippecanoe-decode @@
+    filepath: input.pmtiles
+    timeout: 30
+    env:
+      MFUZZ_COMPAT_LEVEL: '1'
